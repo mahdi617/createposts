@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create a post form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="form-container">
+            <div class="form-body">
+                <form id="postForm">
+                    <!-- Title Field -->
+                    <div class="mb-4">
+                        <label for="title" class="form-label fw-semibold">
+                            <i class="fas fa-heading me-2"></i>عنوان
+                        </label>
+                        <input type="text" class="form-control form-control-lg" id="title" 
+                               placeholder="عنوان پست خود را وارد کنید..." required>
+                    </div>
+                    
+                    <!-- Description Field with Rich Text Toolbar -->
+                    <div class="mb-4">
+                        <label for="description" class="form-label fw-semibold">
+                            <i class="fas fa-align-left me-2"></i>توضیحات
+                        </label>
+                        <div class="rich-text-toolbar">
+                            <button type="button" data-command="bold" title="Bold"><i class="fas fa-bold"></i></button>
+                            <button type="button" data-command="italic" title="Italic"><i class="fas fa-italic"></i></button>
+                            <button type="button" data-command="underline" title="Underline"><i class="fas fa-underline"></i></button>
+                            <button type="button" data-command="insertUnorderedList" title="Bullet List"><i class="fas fa-list-ul"></i></button>
+                            <button type="button" data-command="insertOrderedList" title="Numbered List"><i class="fas fa-list-ol"></i></button>
+                        </div>
+                        <div id="description" class="form-control" contenteditable="true" 
+                             style="min-height: 120px; padding: 1rem;"
+                             data-placeholder="توضیحات خود را اینجا بنویسید... از نوار ابزار بالا برای قالب‌بندی متن استفاده کنید."></div>
+                    </div>
+                    
+                    <!-- Media Upload Field -->
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">
+                            <i class="fas fa-photo-video me-2"></i>عکس‌ها و ویدیوها
+                        </label>
+                        
+                        <div id="mediaPreviewContainer" class="media-preview-container" style="display: none;"></div>
+                        
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt fa-3x text-muted mb-3"></i>
+                                <h5 class="text-muted">عکس‌ها و ویدیوها را اینجا بکشید</h5>
+                                <p class="text-muted mb-3">یا کلیک کنید تا از کامپیوتر خود انتخاب کنید</p>
+                                <button type="button" class="btn btn-outline-primary" id="selectMediaBtn">
+                                    <i class="fas fa-folder-open me-2"></i>انتخاب فایل‌های رسانه‌ای
+                                </button>
+                                <p class="text-muted mt-2 small">فرمت‌های پشتیبانی شده: JPG، PNG، GIF، MP4، WebM، MOV</p>
+                            </div>
+                        </div>
+                        
+                        <input type="file" id="fileInput" multiple accept="image/*,video/*" style="display: none;">
+                        
+                        <div class="media-count" id="mediaCount" style="display: none;"></div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            ایجاد پست
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
+
